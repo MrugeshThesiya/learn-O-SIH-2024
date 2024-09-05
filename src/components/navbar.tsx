@@ -14,8 +14,8 @@ const menuItems = [
     href: '/learn',
   },
   {
-    name: 'Login',
-    href: '/login',
+    name: 'Class',
+    href: '/learn/class',
   },
 ]
 

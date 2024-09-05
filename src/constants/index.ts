@@ -1,4 +1,4 @@
-type videoData = {
+export type videoData = {
     Text : string
     videoId : string
 }
