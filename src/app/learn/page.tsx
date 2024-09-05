@@ -11,31 +11,11 @@ export default function Learn() {
   const [data, setData] = useState<videoData[]>()
   const [load, setLoad] = useState<boolean>(false)
   const [url, setUrl] = useState<string>("https://cloud.appwrite.io/v1/storage/buckets/66d99f1600324c0dce34/files/66d99f59003803d3fc23/view?project=66d99c610036e246192e&project=66d99c610036e246192e&mode=admin")
-  const [isLoading, setIsLoading] = useState(true); // Track loading state
-  const [loadPercentage, setLoadPercentage] = useState(0);
   const [selectedVideo, setSelectedVideo] = useState<videoData>({
     id: "1",
     Text: "Hello",
     videoId: "66d99f59003803d3fc23"
   });
-
-  const handleProgress = () => {
-    if (videoRef.current) {
-      const video = videoRef.current;
-      if (video.buffered.length > 0) {
-        const bufferedEnd = video.buffered.end(video.buffered.length - 1);
-        const duration = video.duration;
-        if (duration > 0) {
-          const percent = (bufferedEnd / duration) * 100;
-          setLoadPercentage(Math.floor(percent));
-        }
-      }
-    }
-  };
-
-  const handleCanPlay = () => {
-    setIsLoading(false); // Video has loaded and is ready to play
-  };
 
 
   const handleVideoSelect = async (video: videoData) => {
