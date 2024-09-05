@@ -1,0 +1,245 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+:root{
+    --background: #f4f4f4;
+    --primary-color-1: #006a75;
+    --primary-color-2:#8aa29e;
+    --Secondary-color-1:#f06d6d;
+    --Secondary-color-2:#ffeab5;
+    --text-color-1:#000000;
+    --text-color-2:#ffffff;
+}
+
+.main{
+    background-image:url("https://images.pexels.com/photos/7516363/pexels-photo-7516363.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 100vh; 
+    margin: 0;
+    padding-top: 60px;
+}
+
+.home-container{
+    height: calc(100vh - 60px);
+    width: 50%;
+    height: 100vh;
+    display: flex;
+    margin-top: 120px;
+    margin-left: 30px;
+    justify-content: center;
+    color: var(--text-color-2);
+    text-shadow:3px 3px 10px var(--text-color-1);
+    
+}
+.home-container h1{
+    font-size: 80px;
+    font-weight: 600;
+}
+
+/*Images*/
+.img-out{
+    background-color:var(--background);
+}
+.images{
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+.image-block{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    animation: fadeIn 1s ease-in forwards;
+    animation-delay: 0.5s;
+}
+.image{  
+    width: 30rem;
+    aspect-ratio: 4/3;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover; 
+    z-index: 2;
+    margin-top: 50px;
+    margin-left: 100px;
+    padding: 50px;
+    margin-bottom: 50px;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.15);
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+    transform: scale(1);
+}
+.image:hover {
+    transform: scale(1.1);
+    box-shadow: 0px 20px 30px rgba(0, 0, 0, 0.3);
+}
+.image-1{
+    background-image: url("https://miro.medium.com/v2/resize:fit:828/format:webp/1*-J1D_AXDgzHLC5UfsPbYIA.jpeg");  
+}
+.image-2{
+    background-image: url("https://www.onlinecolleges.net/wp-content/uploads/2016/03/hearing_impairment_sign2-300x200.jpg");
+}
+.image-block.reverse{
+    background-color: #eff6fc;
+    flex-direction: row-reverse;
+    padding-right: 100px;
+    height: 500px;
+}
+.image-3{
+    background-image: url("https://plus.unsplash.com/premium_photo-1715474789563-eb9998914786?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");    
+}
+
+.description{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    margin-top: 50px;
+    height: 50vh;
+    margin-left: 10px;
+    margin-bottom: 50px;
+    padding: 20px;
+    border-radius: 10px;
+    margin-right: 50px;
+    padding-right: 50px;
+}
+.img-heading{
+    top:0;
+    
+}
+.para-title{
+    font-style: normal;
+    font-weight: 600;
+    font-size: 35px;
+    line-height: 32px;
+    padding-bottom: 25px;
+}
+.para{
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 22px;
+    color: #646464;
+}
+.rev{
+    margin-left: 100px;
+    padding-right: 50px;
+}
+
+/*steps css*/
+.out-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: var(--background);
+}
+
+.steps-container {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    margin-bottom: 20px;
+    z-index: 2;
+}
+
+.step {
+    position: relative;
+    flex: 1;
+    text-align: center;
+    padding: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.step::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: -50%;
+    width: 100%;
+    height: 3px;
+    background-color: var(--primary-color-2);
+    z-index: -1;
+    transition: background-color 0.3s ease;
+}
+
+.step:first-child::before {
+    content: none;
+}
+
+.step.active::before {
+    background-color: var(--primary-color-2);
+}
+
+.step-number {
+    background-color: var(--primary-color-1);
+    color: var(--text-color-2);
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: inline-block;
+    line-height: 60px;
+    font-size: 30px;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.step-title {
+    margin-top: 10px;
+    font-size: 20px;
+    color: var(--text-color-1);
+    transition: color 0.3s ease;
+}
+
+.step.active .step-number {
+    background-color: var(--Secondary-color-1);
+    transform: scale(1.2);
+}
+
+.step.active .step-title {
+    color: var(--primary-color-1);
+}
+
+#nextBtn {
+    padding: 10px 20px;
+    background-color: var(--primary-color-1);
+    color: var(--text-color-2);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+#nextBtn:hover {
+    background-color: var(--primary-color-1);
+}
+
+#nextBtn:hover {
+    background-color: var(--primary-color-1);
+}
+
+.steps-head{
+    font-size: 50px;
+    padding-bottom: 70px;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+

@@ -14,7 +14,16 @@ class storage {
 
     async getVideo(id:string){
         try {
-            return await this.store.getFilePreview(String(process.env.NEXT_PUBLIC_APPWRITE_BUCKET_ID),id)
+            return await this.store.getFileView(String(process.env.NEXT_PUBLIC_APPWRITE_BUCKET_ID),id)
+        } catch (error) {
+            console.log("getVideo error : ",error);
+            
+        }
+    }
+
+    async getAllVideo(){
+        try {
+            return await this.store.listFiles(String(process.env.NEXT_PUBLIC_APPWRITE_BUCKET_ID))
         } catch (error) {
             console.log("getVideo error : ",error);
             

@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
-import { Navbar , Footer } from "@/components";
+import { Navbar, Footer } from "@/components";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -15,7 +15,7 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "LearnO",
+  title: "GyaanSparsh",
   description: "The Learning for Indian Sign Language",
 };
 
@@ -29,11 +29,14 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <Navbar />
         <div className="w-screen h-screen flex flex-col items-center justify-between">
-          <Navbar />
+          <div className="pt-[3.8rem]">
+          </div>
           {children}
-          <Footer/>
+          <Footer />
         </div>
+        <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
       </body>
     </html>
   );

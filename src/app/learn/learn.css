@@ -1,0 +1,25 @@
+.app {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
+  
+  .video-list button {
+    padding: 10px 20px;
+    cursor: pointer;
+    background-color: #006a75;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+  }
+  
+  .video-display {
+    margin-top: 20px;
+    text-align: center;
+  }
+
+  
+  .video-display h3 {
+    color: #006a75;
+  }

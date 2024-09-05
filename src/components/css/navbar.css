@@ -1,0 +1,121 @@
+:root {
+    --background: #f4f4f4;
+    --primary-color-1: #006a75;
+    --primary-color-2: #8aa29e;
+    --Secondary-color-1: #f06d6d;
+    --Secondary-color-2: #ffeab5;
+    --text-color-1: #000000;
+    --text-color-2: #ffffff;
+}
+
+nav {
+    height: 60px;
+    background-color: var(--primary-color-1);
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.links-container {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--text-color-2);
+    padding: 6px 15px;
+    border-radius: 20px;
+    margin: 0 10px;
+    font-size: 18px;
+    font-weight: 600;
+    position: relative;
+}
+
+nav a:not(.active)::after {
+    content: "";
+    position: absolute;
+    background-color: var(--Secondary-color-1);
+    height: 3px;
+    width: 0;
+    left: 0;
+    bottom: -5px;
+    transform: scaleX(0);
+    transition: transform 0.5s ease;
+}
+
+nav a:not(.active):hover::after {
+    transform: scaleX(1);
+    width: 100%;
+}
+
+nav a.active {
+
+    border-style: ridge;
+    border-width: 2px;
+}
+
+nav svg {
+    fill: var(--text-color-2);
+}
+
+#sidebar-active {
+    display: none;
+}
+
+.open-sidebar-button,
+.close-sidebar-button {
+    padding: 0 20px;
+    display: none;
+}
+
+/*responsive*/
+@media(max-width:450px) {
+    .links-container {
+        display: none;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        position: fixed;
+        top: 0;
+        right: 0;
+        z-index: 10;
+        width: 300px;
+        background-color: var(--Secondary-color-2);
+        box-shadow: -5px 0 5px rgba(0, 0, 0, 0.25);
+        transition: 0.75 ease-out;
+    }
+
+    nav a {
+        box-sizing: border-box;
+        height: auto;
+        width: 100%;
+        padding: 20px 30px;
+        justify-content: flex-start;
+    }
+
+    .open-sidebar-button,
+    .close-sidebar-button {
+        padding: 20px;
+        ;
+        display: block;
+    }
+
+    #sidebar-active:checked~.links-container {
+        display: flex;
+        height: 100%;
+        width: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 9;
+    }
+}
