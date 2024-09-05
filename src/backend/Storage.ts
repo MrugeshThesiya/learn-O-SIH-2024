@@ -1,4 +1,4 @@
-import { Client , Storage ,ID} from 'appwrite';
+import { Client , Storage} from 'appwrite';
 
 class storage {
     client = new Client();
