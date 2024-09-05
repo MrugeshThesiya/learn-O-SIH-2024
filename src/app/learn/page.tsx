@@ -9,14 +9,14 @@ export default function Learn() {
     DBService.getData().then((data) => {
       if (data) {
         console.log(data);
-        setData(data.documents.map((item) => ({Text:item.Text,videoId:item.videoId})))
+        setData(data.documents.map((item) => ({id:item.$id,Text:item.Text,videoId:item.videoId})))
       }
     })
   }, [])
   return (
     <>
     {
-      data && data.map((item,index)=>(
+      data && data.map((item,index)=>(  
         <div key={index}>
           {item.Text}
         </div>

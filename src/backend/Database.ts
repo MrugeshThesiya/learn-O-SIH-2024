@@ -14,7 +14,7 @@ class Database {
 
     async getData(){
         try {
-            return await this.databases.listDocuments(String(process.env.NEXT_PUBLIC_APPWRITE_DATABASE_ID),String(process.env.NEXT_PUBLIC_APPWRITE_DATA_COLLECTION_ID),[Query.select(["Text","videoId"])])
+            return await this.databases.listDocuments(String(process.env.NEXT_PUBLIC_APPWRITE_DATABASE_ID),String(process.env.NEXT_PUBLIC_APPWRITE_DATA_COLLECTION_ID),[Query.select(["$id","Text","videoId"])])
         } catch (error) {
             console.log("getData error :",error);
         }
